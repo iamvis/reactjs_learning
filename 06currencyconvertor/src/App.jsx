@@ -5,10 +5,10 @@ import useCurrencyInfo from './customhook/useCurrencyInfo'
 
 function App() {
 
- const[amount, setamount]=useState(null)
+ const[amount, setamount]=useState()
  const[from, setfrom]= useState("usd")
  const[to, setto]= useState("inr")
- const[convertedamount, setconvertedamount]=useState(null)
+ const[convertedamount, setconvertedamount]=useState()
  const currencyInfo=useCurrencyInfo(from)
  const options= Object.keys(currencyInfo)
 
@@ -22,12 +22,14 @@ function App() {
 const convert=()=>{
   setconvertedamount(amount*currencyInfo[to])
 }
+
+
 return (
   
   <div
       className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
       style={{
-          backgroundImage: `url('https://wallpapers.com/images/high/aesthetic-white-and-black-iphone-o2rg7mll999o0ucw.webp')`,
+          backgroundImage: `url('https://images.unsplash.com/photo-1516245834210-c4c142787335?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
 
       }}
   >
